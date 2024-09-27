@@ -1,0 +1,13 @@
+Sub SQL_Connect(ByRef Server, ByRef DataBase, ByRef User, ByRef Pasword)
+Dim Connection
+Set Connection = CreateObject("ADODB.Connection")
+Connection.Open "Provider=SQLOLEDB;Data Source="&Server&";Initial Catalog="&DataBase&";User ID="&User&";Password="&Pasword&";"
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Error #" & Err.Number & " " & Err.Description
+	Err.Clear 
+	Set Connection = Nothing 
+	Exit Sub
+Else
+		ShowSystemAlarm "SQL Connection Successful."
+	End If
+End Sub
