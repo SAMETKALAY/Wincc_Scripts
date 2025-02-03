@@ -1,0 +1,32 @@
+Sub F8_Part_Save(ByVal Connection_Path, ByVal Tablo, ByVal PlantNumber, ByVal Serial_Number, ByVal Recipe_ID, ByVal GateKeeper_ID, ByVal Result, ByVal Successfull)
+Dim Connect, rst,Code
+SmartTags(Successfull) = False
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	SmartTags(Successfull) = False
+	ShowSystemAlarm "SQL Connection Error ParaameterID:" & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Code ="insert  "&Tablo&"(PlantNumber,SerialNumber,RecipeID,GateKeeperID,Result,sditrans) values('"&PlantNumber&"','"&Serial_Number&"','"&Recipe_ID&"','"&GateKeeper_ID&"','"&Result&"','0')"
+ShowSystemAlarm Code
+Set rst = Connect.Execute(Code)
+
+If Err.Number <> 0 Then
+	ShowSystemAlarm Code & Err.Number & " " & Err.Description
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+	SmartTags(Successfull) = False
+End If
+SmartTags(Successfull) = True
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
