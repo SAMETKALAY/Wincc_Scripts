@@ -1,0 +1,1490 @@
+Sub F10_IO_Read()
+If DB3_HMI_IO_READ_Area = 1 Then ''Input
+If DB3_HMI_IO_READ_DB_IN =0 Then '' DB_No Input ve Output için 0 olmalı
+	
+If DB3_HMI_IO_READ_BYTE_IN =0 Then '' byte
+SmartTags("IO_0") = "VALVEMATE_8040_ALARM"
+SmartTags("IO_1") = "Emergency_Stop"
+SmartTags("IO_2") = "System_ON"
+SmartTags("IO_3") = "System_OFF"
+SmartTags("IO_4") = "System_Reset"
+SmartTags("IO_5") = "I0.5"
+SmartTags("IO_6") = "I0.6"
+SmartTags("IO_7") = "I0.7"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =1 Then '' byte
+SmartTags("IO_0") = "I1.0"
+SmartTags("IO_1") = "I1.1.1"
+SmartTags("IO_2") = "Air_Sensor"
+SmartTags("IO_3") = "I1.3"
+SmartTags("IO_4") = "I1.4"
+SmartTags("IO_5") = "I1.5"
+SmartTags("IO_6") = "I1.6"
+SmartTags("IO_7") = "I1.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =2 Then '' byte
+SmartTags("IO_0") = ""
+SmartTags("IO_1") = ""
+SmartTags("IO_2") = ""
+SmartTags("IO_3") = "RMES2_FeedBack"
+SmartTags("IO_4") = "SMES1_FeedBack"
+SmartTags("IO_5") = "SMES2_FeedBack"
+SmartTags("IO_6") = "Electricity_Door_Open"
+SmartTags("IO_7") = "Spare_I2.7"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =3 Then '' byte
+SmartTags("IO_0") = "15U1_FeedBack"
+SmartTags("IO_1") = "16U1_FeedBack"
+SmartTags("IO_2") = "17U1_FeedBack"
+SmartTags("IO_3") = "18U1_FeedBack"
+SmartTags("IO_4") = "19U1_FeedBack"
+SmartTags("IO_5") = "Spare_I3.5"
+SmartTags("IO_6") = "V8_Vacuum_Signal_Product_Small_Entry"
+SmartTags("IO_7") = "V8_Vacuum_Signal_Product_Big_Entry.7"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =4 Then '' byte
+SmartTags("IO_0") = "F2000_Emergency_Stop"
+SmartTags("IO_1") = "F2000_Level_Box"
+SmartTags("IO_2") = "F2000_Molding_During_Cycle"
+SmartTags("IO_3") = "F2000_Taping_Machine_Error"
+SmartTags("IO_4") = "F2000_Power_Ok"
+SmartTags("IO_5") = "F470_Error"
+SmartTags("IO_6") = "F470_Cycle"
+SmartTags("IO_7") = "F470_Power_Ok"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =5 Then '' byte
+SmartTags("IO_0") = "F2000_Home_Poz"
+SmartTags("IO_1") = "F2000_Auto_Mod"
+SmartTags("IO_2") = "F2000_Man_Mod"
+SmartTags("IO_3") = "F2000_Alarm"
+SmartTags("IO_4") = ""
+SmartTags("IO_5") = ""
+SmartTags("IO_6") = ""
+SmartTags("IO_7") = ""
+End If
+
+
+
+If DB3_HMI_IO_READ_BYTE_IN =10 Then '' byte
+SmartTags("IO_0") = "V4_Labeling_Vacuum_Forward_Work_Poz"
+SmartTags("IO_1") = "V4_Labeling_Vacuum_Forward_Park_Poz"
+SmartTags("IO_2") = "V5_Labeling_Table_Movement_Work_Poz"
+SmartTags("IO_3") = "V5_Labeling_Table_Movement_Park_Poz"
+SmartTags("IO_4") = "Spare_I10.4"
+SmartTags("IO_5") = "Spare_I10.5"
+SmartTags("IO_6") = "V9_Vakum_Entry"
+SmartTags("IO_7") = "Spare_I10.7"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =11 Then '' byte
+SmartTags("IO_0") = "Pallet-1_Entry"
+SmartTags("IO_1") = "Pallet-2_Entry"
+SmartTags("IO_2") = "Pallet-1_Door_Info"
+SmartTags("IO_3") = "Pallet-2_Door_Info"
+SmartTags("IO_4") = "Spare_11.4"
+SmartTags("IO_5") = "Spare_11.5"
+SmartTags("IO_6") = "Spare_11.6"
+SmartTags("IO_7") = "Spare_11.7"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =12 Then '' byte
+SmartTags("IO_0") = "Spare_12.0"
+SmartTags("IO_1") = "Spare_12.1"
+SmartTags("IO_2") = "Spare_12.2"
+SmartTags("IO_3") = "Spare_12.3"
+SmartTags("IO_4") = "Air_Safety_1"
+SmartTags("IO_5") = "Air_Entry_Sensor"
+SmartTags("IO_6") = "Air_Safety_2"
+SmartTags("IO_7") = "Air_Safety_3"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =13 Then '' byte
+SmartTags("IO_0") = "Spare_13.0"
+SmartTags("IO_1") = "V3_Referencing_Park_Position"
+SmartTags("IO_2") = "Conveyor_5_Full"
+SmartTags("IO_3") = "Conveyor_Product_Entry_Referance"
+SmartTags("IO_4") = "Spare_13.4"
+SmartTags("IO_5") = "Spare_13.5"
+SmartTags("IO_6") = "Spare_13.6"
+SmartTags("IO_7") = "Spare_13.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =14 Then '' byte
+SmartTags("IO_0") = "Spare_14.0"
+SmartTags("IO_1") = "Spare_14.1"
+SmartTags("IO_2") = "Convetor_3_1_Full"
+SmartTags("IO_3") = "Conveyor_4_Full"
+SmartTags("IO_4") = "Conveyor_2_Full"
+SmartTags("IO_5") = "V10_Box_loading_2_Work_Poz"
+SmartTags("IO_6") = "V10_Box_Loading_2_Park_Poz"
+SmartTags("IO_7") = "Operator-2_Station_Full"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =15 Then '' byte
+SmartTags("IO_0") = "Spare_15.0"
+SmartTags("IO_1") = "Spare_15.1"
+SmartTags("IO_2") = "Conveyor_1_Full"
+SmartTags("IO_3") = "Conveyor_3_Full"
+SmartTags("IO_4") = "V7_Box_Loading_1_Work_Poz"
+SmartTags("IO_5") = "V7_Box_Loading_1_Park_Poz"
+SmartTags("IO_6") = "Operator-1_Station_Full"
+SmartTags("IO_7") = "Spare_15.7"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =30 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_Operator_Panel"
+SmartTags("IO_1") = "Emergency_Stop_Electricity_Cabin"
+SmartTags("IO_2") = "Emergency_Stop_Conveyor-1"
+SmartTags("IO_3") = "Emergency_Stop_Conveyor-2"
+SmartTags("IO_4") = "Emergency_Stop_Cell_Door"
+SmartTags("IO_5") = "Emergency_Stop_F2000"
+SmartTags("IO_6") = "Emergency_Stop_F470"
+SmartTags("IO_7") = "Emergency_Stop_Robot"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =31 Then '' byte
+SmartTags("IO_0") = "System_Active_Mirror"
+SmartTags("IO_1") = "Safety_Door"
+SmartTags("IO_2") = "Safety_Lıght_Barrier_1"
+SmartTags("IO_3") = "Safety_Lıght_Barrier_2"
+SmartTags("IO_4") = "Emergency_Stop_Reserve"
+SmartTags("IO_5") = "Door_Reserve"
+SmartTags("IO_6") = "Reserve_1"
+SmartTags("IO_7") = "Rezerve_2"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =32 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_Operator_Panel_E1"
+SmartTags("IO_1") = "Emergency_Stop_Operator_Panel_E2"
+SmartTags("IO_2") = "Emergency_Stop_Operator_Panel_E5"
+SmartTags("IO_3") = "Emergency_Stop_Operator_Panel_E8"
+SmartTags("IO_4") = "Emergency_Stop_Operator_Panel_E12"
+SmartTags("IO_5") = "Emergency_Stop_Operator_Panel_E13"
+SmartTags("IO_6") = "Emergency_Stop_Operator_Panel_E14"
+SmartTags("IO_7") = "Emergency_Stop_Operator_Panel_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =33 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_Electricity_Cabin_E1"
+SmartTags("IO_1") = "Emergency_Stop_Electricity_Cabin_E2"
+SmartTags("IO_2") = "Emergency_Stop_Electricity_Cabin_E5"
+SmartTags("IO_3") = "Emergency_Stop_Electricity_Cabin_E8"
+SmartTags("IO_4") = "Emergency_Stop_Electricity_Cabin_E12"
+SmartTags("IO_5") = "Emergency_Stop_Electricity_Cabin_E13"
+SmartTags("IO_6") = "Emergency_Stop_Electricity_Cabin_E14"
+SmartTags("IO_7") = "Emergency_Stop_Electricity_Cabin_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =34 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_Conveyor-1_E1"
+SmartTags("IO_1") = "Emergency_Stop_Conveyor-1_E2"
+SmartTags("IO_2") = "Emergency_Stop_Conveyor-1_E5"
+SmartTags("IO_3") = "Emergency_Stop_Conveyor-1_E8"
+SmartTags("IO_4") = "Emergency_Stop_Conveyor-1_E12"
+SmartTags("IO_5") = "Emergency_Stop_Conveyor-1_E13"
+SmartTags("IO_6") = "Emergency_Stop_Conveyor-1_E14"
+SmartTags("IO_7") = "Emergency_Stop_Conveyor-1_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =35 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_Conveyor-2_E1"
+SmartTags("IO_1") = "Emergency_Stop_Conveyor-2_E2"
+SmartTags("IO_2") = "Emergency_Stop_Conveyor-2_E5"
+SmartTags("IO_3") = "Emergency_Stop_Conveyor-2_E8"
+SmartTags("IO_4") = "Emergency_Stop_Conveyor-2_E12"
+SmartTags("IO_5") = "Emergency_Stop_Conveyor-2_E13"
+SmartTags("IO_6") = "Emergency_Stop_Conveyor-2_E14"
+SmartTags("IO_7") = "Emergency_Stop_Conveyor-2_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =36 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_Cell_Door_E1"
+SmartTags("IO_1") = "Emergency_Stop_Cell_Door_E2"
+SmartTags("IO_2") = "Emergency_Stop_Cell_Door_E5"
+SmartTags("IO_3") = "Emergency_Stop_Cell_Door_E8"
+SmartTags("IO_4") = "Emergency_Stop_Cell_Door_E12"
+SmartTags("IO_5") = "Emergency_Stop_Cell_Door_E13"
+SmartTags("IO_6") = "Emergency_Stop_Cell_Door_E14"
+SmartTags("IO_7") = "Emergency_Stop_Cell_Door_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =37 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_F2000_E1"
+SmartTags("IO_1") = "Emergency_Stop_F2000_E2"
+SmartTags("IO_2") = "Emergency_Stop_F2000_E5"
+SmartTags("IO_3") = "Emergency_Stop_F2000_E8"
+SmartTags("IO_4") = "Emergency_Stop_F2000_E12"
+SmartTags("IO_5") = "Emergency_Stop_F2000_E13"
+SmartTags("IO_6") = "Emergency_Stop_F2000_E14"
+SmartTags("IO_7") = "Emergency_Stop_F2000_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =38 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_F470_E1"
+SmartTags("IO_1") = "Emergency_Stop_F470_E2"
+SmartTags("IO_2") = "Emergency_Stop_F470_E5"
+SmartTags("IO_3") = "Emergency_Stop_F470_E8"
+SmartTags("IO_4") = "Emergency_Stop_F470_E12"
+SmartTags("IO_5") = "Emergency_Stop_F470_E13"
+SmartTags("IO_6") = "Emergency_Stop_F470_E14"
+SmartTags("IO_7") = "Emergency_Stop_F470_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =39 Then '' byte
+SmartTags("IO_0") = "Emergency_Stop_Robot_E1"
+SmartTags("IO_1") = "Emergency_Stop_Robot_E2"
+SmartTags("IO_2") = "Emergency_Stop_Robot_E5"
+SmartTags("IO_3") = "Emergency_Stop_Robot_E8"
+SmartTags("IO_4") = "Emergency_Stop_Robot_E12"
+SmartTags("IO_5") = "Emergency_Stop_Robot_E13"
+SmartTags("IO_6") = "Emergency_Stop_Robot_E14"
+SmartTags("IO_7") = "Emergency_Stop_Robot_E15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =300 Then '' byte
+SmartTags("IO_0") = "IN_25W1-Trigger_Ready"
+SmartTags("IO_1") = "IN_25W1-Trigger_Ack"
+SmartTags("IO_2") = "IN_25W1-Acquiring"
+SmartTags("IO_3") = "IN_25W1-Missed_Acq"
+SmartTags("IO_4") = "IN_25W1-Rezerve_0.4"
+SmartTags("IO_5") = "IN_25W1-Rezerve_0.5"
+SmartTags("IO_6") = "IN_25W1-Rezerve_0.6"
+SmartTags("IO_7") = "IN_25W1-Rezerve_0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =301 Then '' byte
+SmartTags("IO_0") = "IN_25W1-Trigger_ID"
+SmartTags("IO_1") = "IN_25W1-Trigger_ID"
+SmartTags("IO_2") = "IN_25W1-Trigger_ID"
+SmartTags("IO_3") = "IN_25W1-Trigger_ID"
+SmartTags("IO_4") = "IN_25W1-Trigger_ID"
+SmartTags("IO_5") = "IN_25W1-Trigger_ID"
+SmartTags("IO_6") = "IN_25W1-Trigger_ID"
+SmartTags("IO_7") = "IN_25W1-Trigger_ID"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =302 Then '' byte
+SmartTags("IO_0") = "IN_25W1-Trigger_ID_1"
+SmartTags("IO_1") = "IN_25W1-Trigger_ID_1"
+SmartTags("IO_2") = "IN_25W1-Trigger_ID_1"
+SmartTags("IO_3") = "IN_25W1-Trigger_ID_1"
+SmartTags("IO_4") = "IN_25W1-Trigger_ID_1"
+SmartTags("IO_5") = "IN_25W1-Trigger_ID_1"
+SmartTags("IO_6") = "IN_25W1-Trigger_ID_1"
+SmartTags("IO_7") = "IN_25W1-Trigger_ID_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =303 Then '' byte
+SmartTags("IO_0") = "IN_25W1-Decoding"
+SmartTags("IO_1") = "IN_25W1-Decode_Complete"
+SmartTags("IO_2") = "IN_25W1-Result_Buffer_Overrun"
+SmartTags("IO_3") = "IN_25W1-Results_Available"
+SmartTags("IO_4") = "IN_25W1-Rezerve_5.4"
+SmartTags("IO_5") = "IN_25W1-Rezerve_5.5"
+SmartTags("IO_6") = "IN_25W1-Rezerve_5.6"
+SmartTags("IO_7") = "IN_25W1-Fault"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =304 Then '' byte
+SmartTags("IO_0") = "IN_25W1-Train_Code_Ack"
+SmartTags("IO_1") = "IN_25W1-Train_Match_String_Ack"
+SmartTags("IO_2") = "IN_25W1-Train_Focus_Ack"
+SmartTags("IO_3") = "IN_25W1-Train_Brightness_Ack"
+SmartTags("IO_4") = "IN_25W1-Untrain_Ack"
+SmartTags("IO_5") = "IN_25W1-Rezerve_1"
+SmartTags("IO_6") = "IN_25W1-Execute_Dmcc_Ack"
+SmartTags("IO_7") = "IN_25W1-0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =305 Then '' byte
+SmartTags("IO_0") = "IN_25W1-Result_ID"
+SmartTags("IO_1") = "IN_25W1-Result_ID"
+SmartTags("IO_2") = "IN_25W1-Result_ID"
+SmartTags("IO_3") = "IN_25W1-Result_ID"
+SmartTags("IO_4") = "IN_25W1-Result_ID"
+SmartTags("IO_5") = "IN_25W1-Result_ID"
+SmartTags("IO_6") = "IN_25W1-Result_ID"
+SmartTags("IO_7") = "IN_25W1-Result_ID"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =400 Then '' byte
+SmartTags("IO_0") = "IN_25W2-Trigger_Ready"
+SmartTags("IO_1") = "IN_25W2-Trigger_Ack"
+SmartTags("IO_2") = "IN_25W2-Acquiring"
+SmartTags("IO_3") = "IN_25W2-Missed_Acq"
+SmartTags("IO_4") = "IN_25W2-Rezerve_0.4"
+SmartTags("IO_5") = "IN_25W2-Rezerve_0.5"
+SmartTags("IO_6") = "IN_25W2-Rezerve_0.6"
+SmartTags("IO_7") = "IN_25W2-Rezerve_0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =401 Then '' byte
+SmartTags("IO_0") = "IN_25W2-Trigger_ID"
+SmartTags("IO_1") = "IN_25W2-Trigger_ID"
+SmartTags("IO_2") = "IN_25W2-Trigger_ID"
+SmartTags("IO_3") = "IN_25W2-Trigger_ID"
+SmartTags("IO_4") = "IN_25W2-Trigger_ID"
+SmartTags("IO_5") = "IN_25W2-Trigger_ID"
+SmartTags("IO_6") = "IN_25W2-Trigger_ID"
+SmartTags("IO_7") = "IN_25W2-Trigger_ID"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =402 Then '' byte
+SmartTags("IO_0") = "IN_25W2-Trigger_ID_1"
+SmartTags("IO_1") = "IN_25W2-Trigger_ID_1"
+SmartTags("IO_2") = "IN_25W2-Trigger_ID_1"
+SmartTags("IO_3") = "IN_25W2-Trigger_ID_1"
+SmartTags("IO_4") = "IN_25W2-Trigger_ID_1"
+SmartTags("IO_5") = "IN_25W2-Trigger_ID_1"
+SmartTags("IO_6") = "IN_25W2-Trigger_ID_1"
+SmartTags("IO_7") = "IN_25W2-Trigger_ID_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =403 Then '' byte
+SmartTags("IO_0") = "IN_25W2-Decoding"
+SmartTags("IO_1") = "IN_25W2-Decode_Complete"
+SmartTags("IO_2") = "IN_25W2-Result_Buffer_Overrun"
+SmartTags("IO_3") = "IN_25W2-Results_Available"
+SmartTags("IO_4") = "IN_25W2-Rezerve_5.4"
+SmartTags("IO_5") = "IN_25W2-Rezerve_5.5"
+SmartTags("IO_6") = "IN_25W2-Rezerve_5.6"
+SmartTags("IO_7") = "IN_25W2-Fault"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =404 Then '' byte
+SmartTags("IO_0") = "IN_25W2-Train_Code_Ack"
+SmartTags("IO_1") = "IN_25W2-Train_Match_String_Ack"
+SmartTags("IO_2") = "IN_25W2-Train_Focus_Ack"
+SmartTags("IO_3") = "IN_25W2-Train_Brightness_Ack"
+SmartTags("IO_4") = "IN_25W2-Untrain_Ack"
+SmartTags("IO_5") = "IN_25W2-Rezerve_1"
+SmartTags("IO_6") = "IN_25W2-Execute_Dmcc_Ack"
+SmartTags("IO_7") = "IN_25W2-0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =405 Then '' byte
+SmartTags("IO_0") = "IN_25W2-Result_ID"
+SmartTags("IO_1") = "IN_25W2-Result_ID"
+SmartTags("IO_2") = "IN_25W2-Result_ID"
+SmartTags("IO_3") = "IN_25W2-Result_ID"
+SmartTags("IO_4") = "IN_25W2-Result_ID"
+SmartTags("IO_5") = "IN_25W2-Result_ID"
+SmartTags("IO_6") = "IN_25W2-Result_ID"
+SmartTags("IO_7") = "IN_25W2-Result_ID"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =500 Then '' byte
+SmartTags("IO_0") = "IN_26W1-Trigger_Ready"
+SmartTags("IO_1") = "IN_26W1-Trigger_Ack"
+SmartTags("IO_2") = "IN_26W1-Acquiring"
+SmartTags("IO_3") = "IN_26W1-Missed_Acq"
+SmartTags("IO_4") = "IN_26W1-Rezerve_0.4"
+SmartTags("IO_5") = "IN_26W1-Rezerve_0.5"
+SmartTags("IO_6") = "IN_26W1-Rezerve_0.6"
+SmartTags("IO_7") = "IN_26W1-Rezerve_0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =501 Then '' byte
+SmartTags("IO_0") = "IN_26W1-Trigger_ID"
+SmartTags("IO_1") = "IN_26W1-Trigger_ID"
+SmartTags("IO_2") = "IN_26W1-Trigger_ID"
+SmartTags("IO_3") = "IN_26W1-Trigger_ID"
+SmartTags("IO_4") = "IN_26W1Trigger_ID"
+SmartTags("IO_5") = "IN_26W1-Trigger_ID"
+SmartTags("IO_6") = "IN_26W1-Trigger_ID"
+SmartTags("IO_7") = "IN_26W1-Trigger_ID"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =502 Then '' byte
+SmartTags("IO_0") = "IN_26W1-Trigger_ID_1"
+SmartTags("IO_1") = "IN_26W1-Trigger_ID_1"
+SmartTags("IO_2") = "IN_26W1-Trigger_ID_1"
+SmartTags("IO_3") = "IN_26W1-Trigger_ID_1"
+SmartTags("IO_4") = "IN_26W1-Trigger_ID_1"
+SmartTags("IO_5") = "IN_26W1-Trigger_ID_1"
+SmartTags("IO_6") = "IN_26W1-Trigger_ID_1"
+SmartTags("IO_7") = "IN_26W1-Trigger_ID_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =503 Then '' byte
+SmartTags("IO_0") = "IN_26W1-Decoding"
+SmartTags("IO_1") = "IN_26W1-Decode_Complete"
+SmartTags("IO_2") = "IN_26W1-Result_Buffer_Overrun"
+SmartTags("IO_3") = "IN_26W1-Results_Available"
+SmartTags("IO_4") = "IN_26W1-Rezerve_5.4"
+SmartTags("IO_5") = "IN_26W1-Rezerve_5.5"
+SmartTags("IO_6") = "IN_26W1-Rezerve_5.6"
+SmartTags("IO_7") = "IN_26W1-Fault"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =504 Then '' byte
+SmartTags("IO_0") = "IN_26W1-Train_Code_Ack"
+SmartTags("IO_1") = "IN_26W1-Train_Match_String_Ack"
+SmartTags("IO_2") = "IN_26W1-Train_Focus_Ack"
+SmartTags("IO_3") = "IN_26W1-Train_Brightness_Ack"
+SmartTags("IO_4") = "IN_26W1-Untrain_Ack"
+SmartTags("IO_5") = "IN_26W1-Rezerve_1"
+SmartTags("IO_6") = "IN_26W1-Execute_Dmcc_Ack"
+SmartTags("IO_7") = "IN_26W1-0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =505 Then '' byte
+SmartTags("IO_0") = "IN_26W1-Result_ID"
+SmartTags("IO_1") = "IN_26W1-Result_ID"
+SmartTags("IO_2") = "IN_26W1-Result_ID"
+SmartTags("IO_3") = "IN_26W1-Result_ID"
+SmartTags("IO_4") = "IN_26W1-Result_ID"
+SmartTags("IO_5") = "IN_26W1-Result_ID"
+SmartTags("IO_6") = "IN_26W1-Result_ID"
+SmartTags("IO_7") = "IN_26W1-Result_ID"
+End If
+
+
+End If
+End If
+
+
+
+
+
+
+
+
+
+If DB3_HMI_IO_READ_Area = 2 Then ''Output
+If DB3_HMI_IO_READ_DB_IN =0 Then '' DB_No Input ve Output için 0 olmalı
+If DB3_HMI_IO_READ_BYTE_IN =0 Then '' byte
+SmartTags("IO_0") = "VALVEMATE_START"
+SmartTags("IO_1") = "VALVEMATE_RESET"
+SmartTags("IO_2") = "MAIN_AIR_VALVE"
+SmartTags("IO_3") = "MACHINE_LIGHTING_1"
+SmartTags("IO_4") = "Q0.4"
+SmartTags("IO_5") = "LIGHT_COLUMN_GREEN"
+SmartTags("IO_6") = "LIGHT_COLUMN_YELLOW"
+SmartTags("IO_7") = "LIGHT_COLUMN_RED"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =1 Then '' byte
+SmartTags("IO_0") = "POWER_ON_LAMP"
+SmartTags("IO_1") = "OP_RESET_LAMP"
+SmartTags("IO_2") = "Q1.2"
+SmartTags("IO_3") = "Q1.3"
+SmartTags("IO_4") = "Q1.4"
+SmartTags("IO_5") = "Q1.5"
+SmartTags("IO_6") = "Q1.6"
+SmartTags("IO_7") = "Q1.7"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =2 Then '' byte
+SmartTags("IO_0") = "System_Button_Lamp"
+SmartTags("IO_1") = "Error_Clear_Lamp"
+SmartTags("IO_2") = "Door_Cycle_Start_Button_Lamp"
+SmartTags("IO_3") = "Door_Cycle_Stop_Button_Lamp"
+SmartTags("IO_4") = "Plc_Run"
+SmartTags("IO_5") = "Spare_Q2.5"
+SmartTags("IO_6") = "Cabin_Buzzer"
+SmartTags("IO_7") = "Cabin_Green_Lamp"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =3 Then '' byte
+SmartTags("IO_0") = "Cabin_Yellow_Lamp"
+SmartTags("IO_1") = "Cabin_Red_Lamp"
+SmartTags("IO_2") = "Spare_Q3.2"
+SmartTags("IO_3") = "Spare_Q3.3"
+SmartTags("IO_4") = "Spare_Q3.4"
+SmartTags("IO_5") = "Spare_Q3.5"
+SmartTags("IO_6") = "V10_Unvacuum_Active"
+SmartTags("IO_7") = "V10_Vacuum_Active"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =4 Then '' byte
+SmartTags("IO_0") = "F2000_External_Start"
+SmartTags("IO_1") = "F2000_External_Consent"
+SmartTags("IO_2") = "F2000_External_Reset"
+SmartTags("IO_3") = "F470_External_Start"
+SmartTags("IO_4") = "F470_External_Stop"
+SmartTags("IO_5") = "F470_External_Reset"
+SmartTags("IO_6") = "Spare_Q4.6"
+SmartTags("IO_7") = "Spare_Q4.7"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =5 Then '' byte
+SmartTags("IO_0") = "Spare_Q5.0"
+SmartTags("IO_1") = "Spare_Q5.1"
+SmartTags("IO_2") = "Spare_Q5.2"
+SmartTags("IO_3") = "Spare_Q5.3"
+SmartTags("IO_4") = "Spare_Q5.4"
+SmartTags("IO_5") = "Spare_Q5.5"
+SmartTags("IO_6") = "Spare_Q5.6"
+SmartTags("IO_7") = "Spare_Q5.7"
+
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =10 Then '' byte
+SmartTags("IO_0") = "V1_Stoper-1_Park"
+SmartTags("IO_1") = "V1_Stoper-1_Work"
+SmartTags("IO_2") = "V2_Stoper-2_Park"
+SmartTags("IO_3") = "V2_Stoper-2_Work"
+SmartTags("IO_4") = "V3_Reference_Park"
+SmartTags("IO_5") = "V3_Reference_Work"
+SmartTags("IO_6") = "V4_Labeling_Vacuum_Forward_Park"
+SmartTags("IO_7") = "V4_Labeling_Vacuum_Forward_Work"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =11 Then '' byte
+SmartTags("IO_0") = "V5_Labeling_Table_Movement_Park"
+SmartTags("IO_1") = "V5_Labeling_Table_Movement_Work"
+SmartTags("IO_2") = "V6_Labelng_Rotary_Park"
+SmartTags("IO_3") = "V6_Labeling_Rotary_Work"
+SmartTags("IO_4") = "V7_Box_Loading-1_Work"
+SmartTags("IO_5") = "V7_Box_Loading-1_Park"
+SmartTags("IO_6") = "V8_Box_Loading-2_Work"
+SmartTags("IO_7") = "V8_Box_Loading-2_Park"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =12 Then '' byte
+SmartTags("IO_0") = "Rezerve_Q12.0"
+SmartTags("IO_1") = "Rezerve_Q12.1"
+SmartTags("IO_2") = "V9_Labeling_Vacuum_Out"
+SmartTags("IO_3") = "V10_Robot_Vacuum_Out"
+SmartTags("IO_4") = "Spare_Q12.4"
+SmartTags("IO_5") = "Spare_Q12.5"
+SmartTags("IO_6") = "Spare_Q12.6"
+SmartTags("IO_7") = "Spare_Q12.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =30 Then '' byte
+SmartTags("IO_0") = "Barrier_1_Reset"
+SmartTags("IO_1") = "Barrier_2_Reset"
+SmartTags("IO_2") = ""
+SmartTags("IO_3") = ""
+SmartTags("IO_4") = ""
+SmartTags("IO_5") = ""
+SmartTags("IO_6") = ""
+SmartTags("IO_7") = ""
+End If
+
+End If
+End If
+
+If DB3_HMI_IO_READ_Area = 3 Then ''Memory
+If DB3_HMI_IO_READ_DB_IN =0 Then '' DB_No Input ve Output için 0 olmalı
+If DB3_HMI_IO_READ_BYTE_IN =0 Then '' byte
+SmartTags("IO_0") = "Clock_10Hz"
+SmartTags("IO_1") = "Clock_5Hz"
+SmartTags("IO_2") = "Clock_2.5Hz"
+SmartTags("IO_3") = "Clock_2Hz"
+SmartTags("IO_4") = "Clock_1.25Hz"
+SmartTags("IO_5") = "Clock_1Hz"
+SmartTags("IO_6") = "Clock_0.625Hz"
+SmartTags("IO_7") = "Clock_0.5Hz"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =1 Then '' byte
+SmartTags("IO_0") = "FirstScan"
+SmartTags("IO_1") = "DiagStatusUpdate"
+SmartTags("IO_2") = "AlwaysTRUE"
+SmartTags("IO_3") = "AlwaysFALSE"
+SmartTags("IO_4") = ""
+SmartTags("IO_5") = ""
+SmartTags("IO_6") = ""
+SmartTags("IO_7") = ""
+End If
+If DB3_HMI_IO_READ_BYTE_IN =10 Then '' byte
+SmartTags("IO_0") = "M_V3_Referencing_Park_Pos"
+SmartTags("IO_1") = "M_V3_Referencing_Work_Pos"
+SmartTags("IO_2") = "M_V4_Labeling_Vacuum_Forward_Park_Pos"
+SmartTags("IO_3") = "M_V4_Labeling_Vacuum_Forward_Work_Pos"
+SmartTags("IO_4") = "M_V5_Labeling_Table_Movement_Park"
+SmartTags("IO_5") = "M_V5_Labeling_Table_Movement_Work"
+SmartTags("IO_6") = "M_V6_Labeling_Rotary_Park_Poz"
+SmartTags("IO_7") = "M_V6_Labeling_Rotary_Work_Poz"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =11 Then '' byte
+SmartTags("IO_0") = "M_V7_Vacuum_Entry"
+SmartTags("IO_1") = "M_V8_Vacuum_Entry"
+SmartTags("IO_2") = "M_V9_Box_Loading_Park_Poz"
+SmartTags("IO_3") = "M_V9_Box_Loading_Work_Poz"
+SmartTags("IO_4") = "Ok_Discharge_Conveyor_Piston_Lower_Position"
+SmartTags("IO_5") = "Alarm_Close"
+SmartTags("IO_6") = "15U1_Visible"
+SmartTags("IO_7") = "System_Ok"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =12 Then '' byte
+SmartTags("IO_0") = "Try_1"
+SmartTags("IO_1") = "Try_2"
+SmartTags("IO_2") = "P_017"
+SmartTags("IO_3") = "M_Not_In"
+SmartTags("IO_4") = "P_018"
+SmartTags("IO_5") = "P_019"
+SmartTags("IO_6") = "P_020"
+SmartTags("IO_7") = "P_021"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =13 Then '' byte
+SmartTags("IO_0") = "P_022"
+SmartTags("IO_1") = "P_023"
+SmartTags("IO_2") = "Try_3"
+SmartTags("IO_3") = "M_Feeding_Box_Referance"
+SmartTags("IO_4") = "M_F470_New_Product"
+SmartTags("IO_5") = "Label_Available"
+SmartTags("IO_6") = "Label_Start_Auto"
+SmartTags("IO_7") = "Label_Start_Man"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =16 Then '' byte
+SmartTags("IO_0") = "P_024"
+SmartTags("IO_1") = "P_025"
+SmartTags("IO_2") = "M_Pallet-1_Entry"
+SmartTags("IO_3") = "M_Pallet-2_Entry"
+SmartTags("IO_4") = "P_026"
+SmartTags("IO_5") = "20U1_Visible"
+SmartTags("IO_6") = "19U1_Visible"
+SmartTags("IO_7") = "18U1_Visible"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =2 Then '' byte
+SmartTags("IO_0") = "DOOR_OPEN_REQUEST"
+SmartTags("IO_1") = "M_15U1_FeedBack"
+SmartTags("IO_2") = "M_15U1_Driver_Error"
+SmartTags("IO_3") = "M_16U1_FeedBack"
+SmartTags("IO_4") = "M_16U1_Driver_Error"
+SmartTags("IO_5") = "M_17U1_FeedBack"
+SmartTags("IO_6") = "M_17U1_Driver_Error"
+SmartTags("IO_7") = "M_18U1_FeedBack"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =17 Then '' byte
+SmartTags("IO_0") = "17U1_Visible"
+SmartTags("IO_1") = "16U1_Visible"
+SmartTags("IO_2") = ""
+SmartTags("IO_3") = ""
+SmartTags("IO_4") = ""
+SmartTags("IO_5") = ""
+SmartTags("IO_6") = ""
+SmartTags("IO_7") = ""
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =3 Then '' byte
+SmartTags("IO_0") = "M_18U1_Driver_Error"
+SmartTags("IO_1") = "M_19U1_FeedBack"
+SmartTags("IO_2") = "M_19U1_Driver_Error"
+SmartTags("IO_3") = "M_20U1_FeedBack"
+SmartTags("IO_4") = "M_20U1_Driver_Error"
+SmartTags("IO_5") = "M_Air_Entry_Sensor"
+SmartTags("IO_6") = "M_Air_Safety_1"
+SmartTags("IO_7") = "M_Air_Safety_2"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =4 Then '' byte
+SmartTags("IO_0") = "M_Air_Safety_3"
+SmartTags("IO_1") = "M_Area_Request_Feeding"
+SmartTags("IO_2") = "M_Area_Request_Label"
+SmartTags("IO_3") = "M_Area_Request_Pallet-1"
+SmartTags("IO_4") = "M_Area_Request_Pallet-2"
+SmartTags("IO_5") = "M_Clear_Fault_Button"
+SmartTags("IO_6") = "M_Convetor_3_1_Full"
+SmartTags("IO_7") = "M_Conveyor_1_Full"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =5 Then '' byte
+SmartTags("IO_0") = "M_Conveyor_2_Full"
+SmartTags("IO_1") = "M_Conveyor_3_Full"
+SmartTags("IO_2") = "M_Conveyor_4_Full"
+SmartTags("IO_3") = "M_Conveyor_5_Full"
+SmartTags("IO_4") = "M_Conveyor_Product_Entry"
+SmartTags("IO_5") = "M_Conveyor_Product_Entry_Referans"
+SmartTags("IO_6") = "M_Electricity_Door_Open"
+SmartTags("IO_7") = "M_HMI_Clear_Fault_Button"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =6 Then '' byte
+SmartTags("IO_0") = "M_Cell_Door_Closed_1"
+SmartTags("IO_1") = "M_Cell_Door_Robot_Soft_Stop_Switch_1"
+SmartTags("IO_2") = "M_Door_Cycle_Start_Button_1"
+SmartTags("IO_3") = "M_Door_Cycle_Stop_Button_1"
+SmartTags("IO_4") = "M_KMES1_FeedBack"
+SmartTags("IO_5") = "M_KMES2_FeedBack"
+SmartTags("IO_6") = "M_Operator-1_Station_Full"
+SmartTags("IO_7") = "M_Operator-2_Station_Full"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =7 Then '' byte
+SmartTags("IO_0") = "M_Phase_Monitoring_Relay_Ok"
+SmartTags("IO_1") = "M_RMES1_FeedBack"
+SmartTags("IO_2") = "M_RMES2_FeedBack"
+SmartTags("IO_3") = "M_Safety_Area_Feeding"
+SmartTags("IO_4") = "M_Safety_Area_Home"
+SmartTags("IO_5") = "M_Safety_Area_Label"
+SmartTags("IO_6") = "M_Safety_Area_Palet-1"
+SmartTags("IO_7") = "M_Safety_Area_Palet-2"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =8 Then '' byte
+SmartTags("IO_0") = "M_SMES1_FeedBack"
+SmartTags("IO_1") = "M_SMES2_FeedBack"
+SmartTags("IO_2") = "M_System_Automatic_Mod"
+SmartTags("IO_3") = "M_System_Manual_Mod"
+SmartTags("IO_4") = "M_System_Off_Button"
+SmartTags("IO_5") = "M_System_On_Button"
+SmartTags("IO_6") = "M_Toolling_Request_Feeding"
+SmartTags("IO_7") = "M_Toolling_Request_Label"
+
+End If
+If DB3_HMI_IO_READ_BYTE_IN =9 Then '' byte
+SmartTags("IO_0") = "M_Toolling_Request_Pallet-1"
+SmartTags("IO_1") = "M_Toolling_Request_Pallet-2"
+SmartTags("IO_2") = "M_V1_Stoper_1_Close_Poz"
+SmartTags("IO_3") = "M_V1_Stoper_1_Open_Poz"
+SmartTags("IO_4") = "M_V10_Box_Loading_Park_Poz"
+SmartTags("IO_5") = "M_V10_Box_Loading_Work_Poz"
+SmartTags("IO_6") = "M_V2_Stoper_2_Close_Poz"
+SmartTags("IO_7") = "M_V2_Stoper_2_Open_Poz"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =300 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Trigger_Enable"
+SmartTags("IO_1") = "OUT_25W1-Trigger"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_0.2"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_0.3"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_0.4"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_0.5"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_0.6"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =301 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Buffer_Results_Enable"
+SmartTags("IO_1") = "OUT_25W1-Inpection_Result_Ack"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_1.2"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_1.3"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_1.4"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_1.5"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_1.6"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_1.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =302 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_1") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_Byte"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =303 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_1") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_Byte_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =304 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Train_Code"
+SmartTags("IO_1") = "OUT_25W1-Train_Match_String"
+SmartTags("IO_2") = "OUT_25W1-Train_Focus"
+SmartTags("IO_3") = "OUT_25W1-Train_Brighness"
+SmartTags("IO_4") = "OUT_25W1-Unrain"
+SmartTags("IO_5") = "OUT_25W1-Rezerve"
+SmartTags("IO_6") = "OUT_25W1-Execute_Dmcc"
+SmartTags("IO_7") = "OUT_25W1-Match_String"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =305 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Option"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =306 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Option_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =307 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Length"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =308 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Length_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =309 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_0"
+SmartTags("IO_1") = "OUT_25W1-User_Data_0"
+SmartTags("IO_2") = "OUT_25W1-User_Data_0"
+SmartTags("IO_3") = "OUT_25W1-User_Data_0"
+SmartTags("IO_4") = "OUT_25W1-User_Data_0"
+SmartTags("IO_5") = "OUT_25W1-User_Data_0"
+SmartTags("IO_6") = "OUT_25W1-User_Data_0"
+SmartTags("IO_7") = "OUT_25W1-User_Data_0"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =310 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =311 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_2"
+SmartTags("IO_1") = "OUT_25W1-User_Data_2"
+SmartTags("IO_2") = "OUT_25W1-User_Data_2"
+SmartTags("IO_3") = "OUT_25W1-User_Data_2"
+SmartTags("IO_4") = "OUT_25W1-User_Data_2"
+SmartTags("IO_5") = "OUT_25W1-User_Data_2"
+SmartTags("IO_6") = "OUT_25W1-User_Data_2"
+SmartTags("IO_7") = "OUT_25W1-User_Data_2"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =312 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_3"
+SmartTags("IO_1") = "OUT_25W1-User_Data_3"
+SmartTags("IO_2") = "OUT_25W1-User_Data_3"
+SmartTags("IO_3") = "OUT_25W1-User_Data_3"
+SmartTags("IO_4") = "OUT_25W1-User_Data_3"
+SmartTags("IO_5") = "OUT_25W1-User_Data_3"
+SmartTags("IO_6") = "OUT_25W1-User_Data_3"
+SmartTags("IO_7") = "OUT_25W1-User_Data_3"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =313 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_4"
+SmartTags("IO_1") = "OUT_25W1-User_Data_4"
+SmartTags("IO_2") = "OUT_25W1-User_Data_4"
+SmartTags("IO_3") = "OUT_25W1-User_Data_4"
+SmartTags("IO_4") = "OUT_25W1-User_Data_4"
+SmartTags("IO_5") = "OUT_25W1-User_Data_4"
+SmartTags("IO_6") = "OUT_25W1-User_Data_4"
+SmartTags("IO_7") = "OUT_25W1-User_Data_4"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =314 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_5"
+SmartTags("IO_1") = "OUT_25W1-User_Data_5"
+SmartTags("IO_2") = "OUT_25W1-User_Data_5"
+SmartTags("IO_3") = "OUT_25W1-User_Data_5"
+SmartTags("IO_4") = "OUT_25W1-User_Data_5"
+SmartTags("IO_5") = "OUT_25W1-User_Data_5"
+SmartTags("IO_6") = "OUT_25W1-User_Data_5"
+SmartTags("IO_7") = "OUT_25W1-User_Data_5"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =315 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_6"
+SmartTags("IO_1") = "OUT_25W1-User_Data_6"
+SmartTags("IO_2") = "OUT_25W1-User_Data_6"
+SmartTags("IO_3") = "OUT_25W1-User_Data_6"
+SmartTags("IO_4") = "OUT_25W1-User_Data_6"
+SmartTags("IO_5") = "OUT_25W1-User_Data_6"
+SmartTags("IO_6") = "OUT_25W1-User_Data_6"
+SmartTags("IO_7") = "OUT_25W1-User_Data_6"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =316 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_7"
+SmartTags("IO_1") = "OUT_25W1-User_Data_7"
+SmartTags("IO_2") = "OUT_25W1-User_Data_7"
+SmartTags("IO_3") = "OUT_25W1-User_Data_7"
+SmartTags("IO_4") = "OUT_25W1-User_Data_7"
+SmartTags("IO_5") = "OUT_25W1-User_Data_7"
+SmartTags("IO_6") = "OUT_25W1-User_Data_7"
+SmartTags("IO_7") = "OUT_25W1-User_Data_7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =317 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_8"
+SmartTags("IO_1") = "OUT_25W1-User_Data_8"
+SmartTags("IO_2") = "OUT_25W1-User_Data_8"
+SmartTags("IO_3") = "OUT_25W1-User_Data_8"
+SmartTags("IO_4") = "OUT_25W1-User_Data_8"
+SmartTags("IO_5") = "OUT_25W1-User_Data_8"
+SmartTags("IO_6") = "OUT_25W1-User_Data_8"
+SmartTags("IO_7") = "OUT_25W1-User_Data_8"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =318 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_9"
+SmartTags("IO_1") = "OUT_25W1-User_Data_9"
+SmartTags("IO_2") = "OUT_25W1-User_Data_9"
+SmartTags("IO_3") = "OUT_25W1-User_Data_9"
+SmartTags("IO_4") = "OUT_25W1-User_Data_9"
+SmartTags("IO_5") = "OUT_25W1-User_Data_9"
+SmartTags("IO_6") = "OUT_25W1-User_Data_9"
+SmartTags("IO_7") = "OUT_25W1-User_Data_9"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =319 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_10"
+SmartTags("IO_1") = "OUT_25W1-User_Data_10"
+SmartTags("IO_2") = "OUT_25W1-User_Data_10"
+SmartTags("IO_3") = "OUT_25W1-User_Data_10"
+SmartTags("IO_4") = "OUT_25W1-User_Data_10"
+SmartTags("IO_5") = "OUT_25W1-User_Data_10"
+SmartTags("IO_6") = "OUT_25W1-User_Data_10"
+SmartTags("IO_7") = "OUT_25W1-User_Data_10"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =320 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_11"
+SmartTags("IO_1") = "OUT_25W1-User_Data_11"
+SmartTags("IO_2") = "OUT_25W1-User_Data_11"
+SmartTags("IO_3") = "OUT_25W1-User_Data_11"
+SmartTags("IO_4") = "OUT_25W1-User_Data_11"
+SmartTags("IO_5") = "OUT_25W1-User_Data_11"
+SmartTags("IO_6") = "OUT_25W1-User_Data_11"
+SmartTags("IO_7") = "OUT_25W1-User_Data_11"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =321 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_12"
+SmartTags("IO_1") = "OUT_25W1-User_Data_12"
+SmartTags("IO_2") = "OUT_25W1-User_Data_12"
+SmartTags("IO_3") = "OUT_25W1-User_Data_12"
+SmartTags("IO_4") = "OUT_25W1-User_Data_12"
+SmartTags("IO_5") = "OUT_25W1-User_Data_12"
+SmartTags("IO_6") = "OUT_25W1-User_Data_12"
+SmartTags("IO_7") = "OUT_25W1-User_Data_12"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =322 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_13"
+SmartTags("IO_1") = "OUT_25W1-User_Data_13"
+SmartTags("IO_2") = "OUT_25W1-User_Data_13"
+SmartTags("IO_3") = "OUT_25W1-User_Data_13"
+SmartTags("IO_4") = "OUT_25W1-User_Data_13"
+SmartTags("IO_5") = "OUT_25W1-User_Data_13"
+SmartTags("IO_6") = "OUT_25W1-User_Data_13"
+SmartTags("IO_7") = "OUT_25W1-User_Data_13"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =323 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_14"
+SmartTags("IO_1") = "OUT_25W1-User_Data_14"
+SmartTags("IO_2") = "OUT_25W1-User_Data_14"
+SmartTags("IO_3") = "OUT_25W1-User_Data_14"
+SmartTags("IO_4") = "OUT_25W1-User_Data_14"
+SmartTags("IO_5") = "OUT_25W1-User_Data_14"
+SmartTags("IO_6") = "OUT_25W1-User_Data_14"
+SmartTags("IO_7") = "OUT_25W1-User_Data_14"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =324 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_15"
+SmartTags("IO_1") = "OUT_25W1-User_Data_15"
+SmartTags("IO_2") = "OUT_25W1-User_Data_15"
+SmartTags("IO_3") = "OUT_25W1-User_Data_15"
+SmartTags("IO_4") = "OUT_25W1-User_Data_15"
+SmartTags("IO_5") = "OUT_25W1-User_Data_15"
+SmartTags("IO_6") = "OUT_25W1-User_Data_15"
+SmartTags("IO_7") = "OUT_25W1-User_Data_15"
+End If
+
+If DB3_HMI_IO_READ_BYTE_IN =400 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Trigger_Enable"
+SmartTags("IO_1") = "OUT_25W1-Trigger"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_0.2"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_0.3"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_0.4"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_0.5"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_0.6"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =401 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Buffer_Results_Enable"
+SmartTags("IO_1") = "OUT_25W1-Inpection_Result_Ack"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_1.2"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_1.3"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_1.4"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_1.5"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_1.6"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_1.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =402 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_1") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_Byte"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =403 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_1") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_Byte_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =404 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Train_Code"
+SmartTags("IO_1") = "OUT_25W1-Train_Match_String"
+SmartTags("IO_2") = "OUT_25W1-Train_Focus"
+SmartTags("IO_3") = "OUT_25W1-Train_Brighness"
+SmartTags("IO_4") = "OUT_25W1-Unrain"
+SmartTags("IO_5") = "OUT_25W1-Rezerve"
+SmartTags("IO_6") = "OUT_25W1-Execute_Dmcc"
+SmartTags("IO_7") = "OUT_25W1-Match_String"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =405 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Option"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =406 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Option_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =407 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Length"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =408 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Length_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =409 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_0"
+SmartTags("IO_1") = "OUT_25W1-User_Data_0"
+SmartTags("IO_2") = "OUT_25W1-User_Data_0"
+SmartTags("IO_3") = "OUT_25W1-User_Data_0"
+SmartTags("IO_4") = "OUT_25W1-User_Data_0"
+SmartTags("IO_5") = "OUT_25W1-User_Data_0"
+SmartTags("IO_6") = "OUT_25W1-User_Data_0"
+SmartTags("IO_7") = "OUT_25W1-User_Data_0"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =410 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =411 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_2"
+SmartTags("IO_1") = "OUT_25W1-User_Data_2"
+SmartTags("IO_2") = "OUT_25W1-User_Data_2"
+SmartTags("IO_3") = "OUT_25W1-User_Data_2"
+SmartTags("IO_4") = "OUT_25W1-User_Data_2"
+SmartTags("IO_5") = "OUT_25W1-User_Data_2"
+SmartTags("IO_6") = "OUT_25W1-User_Data_2"
+SmartTags("IO_7") = "OUT_25W1-User_Data_2"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =412 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_3"
+SmartTags("IO_1") = "OUT_25W1-User_Data_3"
+SmartTags("IO_2") = "OUT_25W1-User_Data_3"
+SmartTags("IO_3") = "OUT_25W1-User_Data_3"
+SmartTags("IO_4") = "OUT_25W1-User_Data_3"
+SmartTags("IO_5") = "OUT_25W1-User_Data_3"
+SmartTags("IO_6") = "OUT_25W1-User_Data_3"
+SmartTags("IO_7") = "OUT_25W1-User_Data_3"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =413 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_4"
+SmartTags("IO_1") = "OUT_25W1-User_Data_4"
+SmartTags("IO_2") = "OUT_25W1-User_Data_4"
+SmartTags("IO_3") = "OUT_25W1-User_Data_4"
+SmartTags("IO_4") = "OUT_25W1-User_Data_4"
+SmartTags("IO_5") = "OUT_25W1-User_Data_4"
+SmartTags("IO_6") = "OUT_25W1-User_Data_4"
+SmartTags("IO_7") = "OUT_25W1-User_Data_4"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =414 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_5"
+SmartTags("IO_1") = "OUT_25W1-User_Data_5"
+SmartTags("IO_2") = "OUT_25W1-User_Data_5"
+SmartTags("IO_3") = "OUT_25W1-User_Data_5"
+SmartTags("IO_4") = "OUT_25W1-User_Data_5"
+SmartTags("IO_5") = "OUT_25W1-User_Data_5"
+SmartTags("IO_6") = "OUT_25W1-User_Data_5"
+SmartTags("IO_7") = "OUT_25W1-User_Data_5"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =415 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_6"
+SmartTags("IO_1") = "OUT_25W1-User_Data_6"
+SmartTags("IO_2") = "OUT_25W1-User_Data_6"
+SmartTags("IO_3") = "OUT_25W1-User_Data_6"
+SmartTags("IO_4") = "OUT_25W1-User_Data_6"
+SmartTags("IO_5") = "OUT_25W1-User_Data_6"
+SmartTags("IO_6") = "OUT_25W1-User_Data_6"
+SmartTags("IO_7") = "OUT_25W1-User_Data_6"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =416 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_7"
+SmartTags("IO_1") = "OUT_25W1-User_Data_7"
+SmartTags("IO_2") = "OUT_25W1-User_Data_7"
+SmartTags("IO_3") = "OUT_25W1-User_Data_7"
+SmartTags("IO_4") = "OUT_25W1-User_Data_7"
+SmartTags("IO_5") = "OUT_25W1-User_Data_7"
+SmartTags("IO_6") = "OUT_25W1-User_Data_7"
+SmartTags("IO_7") = "OUT_25W1-User_Data_7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =417 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_8"
+SmartTags("IO_1") = "OUT_25W1-User_Data_8"
+SmartTags("IO_2") = "OUT_25W1-User_Data_8"
+SmartTags("IO_3") = "OUT_25W1-User_Data_8"
+SmartTags("IO_4") = "OUT_25W1-User_Data_8"
+SmartTags("IO_5") = "OUT_25W1-User_Data_8"
+SmartTags("IO_6") = "OUT_25W1-User_Data_8"
+SmartTags("IO_7") = "OUT_25W1-User_Data_8"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =418 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_9"
+SmartTags("IO_1") = "OUT_25W1-User_Data_9"
+SmartTags("IO_2") = "OUT_25W1-User_Data_9"
+SmartTags("IO_3") = "OUT_25W1-User_Data_9"
+SmartTags("IO_4") = "OUT_25W1-User_Data_9"
+SmartTags("IO_5") = "OUT_25W1-User_Data_9"
+SmartTags("IO_6") = "OUT_25W1-User_Data_9"
+SmartTags("IO_7") = "OUT_25W1-User_Data_9"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =419 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_10"
+SmartTags("IO_1") = "OUT_25W1-User_Data_10"
+SmartTags("IO_2") = "OUT_25W1-User_Data_10"
+SmartTags("IO_3") = "OUT_25W1-User_Data_10"
+SmartTags("IO_4") = "OUT_25W1-User_Data_10"
+SmartTags("IO_5") = "OUT_25W1-User_Data_10"
+SmartTags("IO_6") = "OUT_25W1-User_Data_10"
+SmartTags("IO_7") = "OUT_25W1-User_Data_10"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =420 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_11"
+SmartTags("IO_1") = "OUT_25W1-User_Data_11"
+SmartTags("IO_2") = "OUT_25W1-User_Data_11"
+SmartTags("IO_3") = "OUT_25W1-User_Data_11"
+SmartTags("IO_4") = "OUT_25W1-User_Data_11"
+SmartTags("IO_5") = "OUT_25W1-User_Data_11"
+SmartTags("IO_6") = "OUT_25W1-User_Data_11"
+SmartTags("IO_7") = "OUT_25W1-User_Data_11"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =421 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_12"
+SmartTags("IO_1") = "OUT_25W1-User_Data_12"
+SmartTags("IO_2") = "OUT_25W1-User_Data_12"
+SmartTags("IO_3") = "OUT_25W1-User_Data_12"
+SmartTags("IO_4") = "OUT_25W1-User_Data_12"
+SmartTags("IO_5") = "OUT_25W1-User_Data_12"
+SmartTags("IO_6") = "OUT_25W1-User_Data_12"
+SmartTags("IO_7") = "OUT_25W1-User_Data_12"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =422 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_13"
+SmartTags("IO_1") = "OUT_25W1-User_Data_13"
+SmartTags("IO_2") = "OUT_25W1-User_Data_13"
+SmartTags("IO_3") = "OUT_25W1-User_Data_13"
+SmartTags("IO_4") = "OUT_25W1-User_Data_13"
+SmartTags("IO_5") = "OUT_25W1-User_Data_13"
+SmartTags("IO_6") = "OUT_25W1-User_Data_13"
+SmartTags("IO_7") = "OUT_25W1-User_Data_13"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =423 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_14"
+SmartTags("IO_1") = "OUT_25W1-User_Data_14"
+SmartTags("IO_2") = "OUT_25W1-User_Data_14"
+SmartTags("IO_3") = "OUT_25W1-User_Data_14"
+SmartTags("IO_4") = "OUT_25W1-User_Data_14"
+SmartTags("IO_5") = "OUT_25W1-User_Data_14"
+SmartTags("IO_6") = "OUT_25W1-User_Data_14"
+SmartTags("IO_7") = "OUT_25W1-User_Data_14"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =424 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_15"
+SmartTags("IO_1") = "OUT_25W1-User_Data_15"
+SmartTags("IO_2") = "OUT_25W1-User_Data_15"
+SmartTags("IO_3") = "OUT_25W1-User_Data_15"
+SmartTags("IO_4") = "OUT_25W1-User_Data_15"
+SmartTags("IO_5") = "OUT_25W1-User_Data_15"
+SmartTags("IO_6") = "OUT_25W1-User_Data_15"
+SmartTags("IO_7") = "OUT_25W1-User_Data_15"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =500 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Trigger_Enable"
+SmartTags("IO_1") = "OUT_25W1-Trigger"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_0.2"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_0.3"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_0.4"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_0.5"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_0.6"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_0.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =501 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Buffer_Results_Enable"
+SmartTags("IO_1") = "OUT_25W1-Inpection_Result_Ack"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_1.2"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_1.3"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_1.4"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_1.5"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_1.6"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_1.7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =502 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_1") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_Byte"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_Byte"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =503 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_1") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_2") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_3") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_4") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_5") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_6") = "OUT_25W1-Rezerve_Byte_1"
+SmartTags("IO_7") = "OUT_25W1-Rezerve_Byte_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =504 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-Train_Code"
+SmartTags("IO_1") = "OUT_25W1-Train_Match_String"
+SmartTags("IO_2") = "OUT_25W1-Train_Focus"
+SmartTags("IO_3") = "OUT_25W1-Train_Brighness"
+SmartTags("IO_4") = "OUT_25W1-Unrain"
+SmartTags("IO_5") = "OUT_25W1-Rezerve"
+SmartTags("IO_6") = "OUT_25W1-Execute_Dmcc"
+SmartTags("IO_7") = "OUT_25W1-Match_String"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =505 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Option"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Option"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =506 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Option_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Option_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =507 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Length"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Length"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =508 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_Length_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_Length_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =509 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_0"
+SmartTags("IO_1") = "OUT_25W1-User_Data_0"
+SmartTags("IO_2") = "OUT_25W1-User_Data_0"
+SmartTags("IO_3") = "OUT_25W1-User_Data_0"
+SmartTags("IO_4") = "OUT_25W1-User_Data_0"
+SmartTags("IO_5") = "OUT_25W1-User_Data_0"
+SmartTags("IO_6") = "OUT_25W1-User_Data_0"
+SmartTags("IO_7") = "OUT_25W1-User_Data_0"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =510 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_1"
+SmartTags("IO_1") = "OUT_25W1-User_Data_1"
+SmartTags("IO_2") = "OUT_25W1-User_Data_1"
+SmartTags("IO_3") = "OUT_25W1-User_Data_1"
+SmartTags("IO_4") = "OUT_25W1-User_Data_1"
+SmartTags("IO_5") = "OUT_25W1-User_Data_1"
+SmartTags("IO_6") = "OUT_25W1-User_Data_1"
+SmartTags("IO_7") = "OUT_25W1-User_Data_1"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =511 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_2"
+SmartTags("IO_1") = "OUT_25W1-User_Data_2"
+SmartTags("IO_2") = "OUT_25W1-User_Data_2"
+SmartTags("IO_3") = "OUT_25W1-User_Data_2"
+SmartTags("IO_4") = "OUT_25W1-User_Data_2"
+SmartTags("IO_5") = "OUT_25W1-User_Data_2"
+SmartTags("IO_6") = "OUT_25W1-User_Data_2"
+SmartTags("IO_7") = "OUT_25W1-User_Data_2"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =512 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_3"
+SmartTags("IO_1") = "OUT_25W1-User_Data_3"
+SmartTags("IO_2") = "OUT_25W1-User_Data_3"
+SmartTags("IO_3") = "OUT_25W1-User_Data_3"
+SmartTags("IO_4") = "OUT_25W1-User_Data_3"
+SmartTags("IO_5") = "OUT_25W1-User_Data_3"
+SmartTags("IO_6") = "OUT_25W1-User_Data_3"
+SmartTags("IO_7") = "OUT_25W1-User_Data_3"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =513 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_4"
+SmartTags("IO_1") = "OUT_25W1-User_Data_4"
+SmartTags("IO_2") = "OUT_25W1-User_Data_4"
+SmartTags("IO_3") = "OUT_25W1-User_Data_4"
+SmartTags("IO_4") = "OUT_25W1-User_Data_4"
+SmartTags("IO_5") = "OUT_25W1-User_Data_4"
+SmartTags("IO_6") = "OUT_25W1-User_Data_4"
+SmartTags("IO_7") = "OUT_25W1-User_Data_4"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =514 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_5"
+SmartTags("IO_1") = "OUT_25W1-User_Data_5"
+SmartTags("IO_2") = "OUT_25W1-User_Data_5"
+SmartTags("IO_3") = "OUT_25W1-User_Data_5"
+SmartTags("IO_4") = "OUT_25W1-User_Data_5"
+SmartTags("IO_5") = "OUT_25W1-User_Data_5"
+SmartTags("IO_6") = "OUT_25W1-User_Data_5"
+SmartTags("IO_7") = "OUT_25W1-User_Data_5"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =515 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_6"
+SmartTags("IO_1") = "OUT_25W1-User_Data_6"
+SmartTags("IO_2") = "OUT_25W1-User_Data_6"
+SmartTags("IO_3") = "OUT_25W1-User_Data_6"
+SmartTags("IO_4") = "OUT_25W1-User_Data_6"
+SmartTags("IO_5") = "OUT_25W1-User_Data_6"
+SmartTags("IO_6") = "OUT_25W1-User_Data_6"
+SmartTags("IO_7") = "OUT_25W1-User_Data_6"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =516 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_7"
+SmartTags("IO_1") = "OUT_25W1-User_Data_7"
+SmartTags("IO_2") = "OUT_25W1-User_Data_7"
+SmartTags("IO_3") = "OUT_25W1-User_Data_7"
+SmartTags("IO_4") = "OUT_25W1-User_Data_7"
+SmartTags("IO_5") = "OUT_25W1-User_Data_7"
+SmartTags("IO_6") = "OUT_25W1-User_Data_7"
+SmartTags("IO_7") = "OUT_25W1-User_Data_7"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =517 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_8"
+SmartTags("IO_1") = "OUT_25W1-User_Data_8"
+SmartTags("IO_2") = "OUT_25W1-User_Data_8"
+SmartTags("IO_3") = "OUT_25W1-User_Data_8"
+SmartTags("IO_4") = "OUT_25W1-User_Data_8"
+SmartTags("IO_5") = "OUT_25W1-User_Data_8"
+SmartTags("IO_6") = "OUT_25W1-User_Data_8"
+SmartTags("IO_7") = "OUT_25W1-User_Data_8"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =518 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_9"
+SmartTags("IO_1") = "OUT_25W1-User_Data_9"
+SmartTags("IO_2") = "OUT_25W1-User_Data_9"
+SmartTags("IO_3") = "OUT_25W1-User_Data_9"
+SmartTags("IO_4") = "OUT_25W1-User_Data_9"
+SmartTags("IO_5") = "OUT_25W1-User_Data_9"
+SmartTags("IO_6") = "OUT_25W1-User_Data_9"
+SmartTags("IO_7") = "OUT_25W1-User_Data_9"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =519 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_10"
+SmartTags("IO_1") = "OUT_25W1-User_Data_10"
+SmartTags("IO_2") = "OUT_25W1-User_Data_10"
+SmartTags("IO_3") = "OUT_25W1-User_Data_10"
+SmartTags("IO_4") = "OUT_25W1-User_Data_10"
+SmartTags("IO_5") = "OUT_25W1-User_Data_10"
+SmartTags("IO_6") = "OUT_25W1-User_Data_10"
+SmartTags("IO_7") = "OUT_25W1-User_Data_10"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =520 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_11"
+SmartTags("IO_1") = "OUT_25W1-User_Data_11"
+SmartTags("IO_2") = "OUT_25W1-User_Data_11"
+SmartTags("IO_3") = "OUT_25W1-User_Data_11"
+SmartTags("IO_4") = "OUT_25W1-User_Data_11"
+SmartTags("IO_5") = "OUT_25W1-User_Data_11"
+SmartTags("IO_6") = "OUT_25W1-User_Data_11"
+SmartTags("IO_7") = "OUT_25W1-User_Data_11"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =521 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_12"
+SmartTags("IO_1") = "OUT_25W1-User_Data_12"
+SmartTags("IO_2") = "OUT_25W1-User_Data_12"
+SmartTags("IO_3") = "OUT_25W1-User_Data_12"
+SmartTags("IO_4") = "OUT_25W1-User_Data_12"
+SmartTags("IO_5") = "OUT_25W1-User_Data_12"
+SmartTags("IO_6") = "OUT_25W1-User_Data_12"
+SmartTags("IO_7") = "OUT_25W1-User_Data_12"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =522 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_13"
+SmartTags("IO_1") = "OUT_25W1-User_Data_13"
+SmartTags("IO_2") = "OUT_25W1-User_Data_13"
+SmartTags("IO_3") = "OUT_25W1-User_Data_13"
+SmartTags("IO_4") = "OUT_25W1-User_Data_13"
+SmartTags("IO_5") = "OUT_25W1-User_Data_13"
+SmartTags("IO_6") = "OUT_25W1-User_Data_13"
+SmartTags("IO_7") = "OUT_25W1-User_Data_13"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =523 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_14"
+SmartTags("IO_1") = "OUT_25W1-User_Data_14"
+SmartTags("IO_2") = "OUT_25W1-User_Data_14"
+SmartTags("IO_3") = "OUT_25W1-User_Data_14"
+SmartTags("IO_4") = "OUT_25W1-User_Data_14"
+SmartTags("IO_5") = "OUT_25W1-User_Data_14"
+SmartTags("IO_6") = "OUT_25W1-User_Data_14"
+SmartTags("IO_7") = "OUT_25W1-User_Data_14"
+End If
+If DB3_HMI_IO_READ_BYTE_IN =524 Then '' byte
+SmartTags("IO_0") = "OUT_25W1-User_Data_15"
+SmartTags("IO_1") = "OUT_25W1-User_Data_15"
+SmartTags("IO_2") = "OUT_25W1-User_Data_15"
+SmartTags("IO_3") = "OUT_25W1-User_Data_15"
+SmartTags("IO_4") = "OUT_25W1-User_Data_15"
+SmartTags("IO_5") = "OUT_25W1-User_Data_15"
+SmartTags("IO_6") = "OUT_25W1-User_Data_15"
+SmartTags("IO_7") = "OUT_25W1-User_Data_15"
+End If
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+End If
+End If
+
+
+
+End Sub
