@@ -1,0 +1,41 @@
+Sub F12_sp_PreviousProcessCheck(ByVal Connection_Path, ByVal Serial_Number, ByVal OperationID, ByVal ProductNumber, ByVal Result, ByVal Error_Description, ByVal Successfull)
+Dim Connect, rst,Code
+SmartTags(Error_Description) ="Not_Read"
+SmartTags(Result)=1
+SmartTags(Successfull) = False
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Error Local Previous Check:" & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+
+
+Code ="DECLARE	@return_value int,@Result int,		@ErrorDescription varchar(100)EXEC	@return_value = [dbo].[sp_PreviousProcessCheck]		@SerialNumber = '"&Serial_Number&"',		@OperationID = '"&OperationID&"',		@ProductNumber = '"&ProductNumber&"',		@Result = @Result OUTPUT,@ErrorDescription = @ErrorDescription OUTPUT SELECT	@Result as '@Result',		@ErrorDescription as '@ErrorDescription'"
+
+ShowSystemAlarm Code
+Set rst = Connect.Execute(Code)
+If Err.Number <> 0 Then
+	ShowSystemAlarm Code & Err.Number & " " & Err.Description
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+If Not (rst.EOF And rst.BOF) Then 	
+	rst.MoveFirst 	
+		SmartTags(Result) = rst.Fields(0).Value
+		SmartTags(Error_Description) = rst.Fields(1).Value
+Else
+	SmartTags(Successfull) = False
+End If
+SmartTags(Successfull) = True
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
