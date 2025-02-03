@@ -1,0 +1,18 @@
+Sub General_Server_Connect()
+If DB1_SQL_Connect_Genaral_Server_Connect_Trigger Then
+	DB1_SQL_Connect_Genaral_Server_Connect = False
+Dim Connect, rst, j,i,sqlQuery
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open DB1_SQL_Connect_General_Path
+DB1_SQL_Connect_Genaral_Server_Connect = True
+If Err.Number <> 0 Then
+	DB1_SQL_Connect_Genaral_Server_Connect = False
+	ShowSystemAlarm "S33_Recipe_Read-Error-1 #" & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+End If
+End Sub
