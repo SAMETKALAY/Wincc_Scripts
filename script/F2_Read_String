@@ -1,0 +1,32 @@
+Sub F2_Read_String(ByVal Connection_Path, ByVal RecipeID, ByVal Parametre_ID, ByVal Result_Tag)
+Dim Connect, rst, j,i,Parameters
+Parameters=-2147483648+Parametre_ID
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Error ParaameterID:"&Parametre_ID & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Set rst = Connect.Execute("select StringValue from RecipeData where RecordID ='"&RecipeID&"' and ParameterID ='"&Parameters&"'")
+'ShowSystemAlarm "select Value from RecipeData where RecipeID ='"&RecipeID&"' and ParameterID ='"&Parameters&"'"
+If Err.Number <> 0 Then
+	ShowSystemAlarm "Error select Value from RecipeData where RecipeID ='"&RecipeID&"' and ParameterID ='"& Parameters &"'" & Err.Number & " " & Err.Description
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+If Not (rst.EOF And rst.BOF) Then 	
+	rst.MoveFirst 	
+		SmartTags(Result_Tag) = rst.Fields(0).Value
+'		ShowSystemAlarm "VALUE" &SmartTags(Result_Tag)
+End If
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
