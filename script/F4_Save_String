@@ -1,0 +1,29 @@
+Sub F4_Save_String(ByVal Tablo, ByVal Connection_Path, ByVal RecipeID, ByVal Parametre_ID, ByVal Result_Tag)
+Dim Connect, rst, j,i,Parameters,Code
+Parameters=-2147483648+Parametre_ID
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Parametre_ID:"&Parametre_ID & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Code =" insert into "&Tablo&"(RecordID,ParameterID,StringValue,PlantNumber) values('"&RecipeID&"','"&Parameters&"','"&Result_Tag&"','"&SmartTags("DB1_SQL_Connect_Plant_Number")&"')"
+Set rst = Connect.Execute(Code)
+ShowSystemAlarm Code
+If Err.Number <> 0 Then
+	ShowSystemAlarm "Error insert into RecipeData(RecipeID,ParameterID,Value,PlantNumber) values('"&RecipeID&"','"&Parameters&"','"&Result_Tag&"','"&SmartTags("DB1_SQL_Connect_Plant_Number")&"')" & Err.Number & " " & Err.Description
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
