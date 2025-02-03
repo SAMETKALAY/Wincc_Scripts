@@ -1,0 +1,30 @@
+Sub F11_Update_Rail(ByVal Tablo, ByVal Connection_Path, ByVal Set_Colon, ByVal Set_Info, ByVal Where_ID, ByVal Successfull)
+Dim Connect, rst,Code
+	SmartTags(Successfull) = True
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Parametre_ID:" & Err.Number & " " & Err.Description
+	SmartTags(Successfull) = False
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Code ="  UPDATE "&Tablo&" Set "&Set_Colon&" = '"&Set_Info&"' where ID ='"&Where_ID&"'"
+ShowSystemAlarm Code
+Set rst = Connect.Execute(Code)
+If Err.Number <> 0 Then
+		SmartTags(Successfull) = False
+	ShowSystemAlarm Code	
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
