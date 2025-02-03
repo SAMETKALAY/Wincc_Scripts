@@ -1,0 +1,40 @@
+Sub F9_Local_Previous_Check(ByVal Connection_Path, ByVal Tablo, ByVal Serial_Number, ByVal Result_Date, ByVal Result, ByVal Before, ByVal Successfull)
+Dim Connect, rst,Code
+SmartTags(Result_Date) ="Not_Read"
+SmartTags(Result)=1
+SmartTags(Successfull) = False
+SmartTags(Before) = False
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Error Local Previous Check:" & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Code ="select PDate,Result from "&Tablo&" where SerialNumber='"&Serial_Number&"' order by PDate desc"
+ShowSystemAlarm Code
+Set rst = Connect.Execute(Code)
+If Err.Number <> 0 Then
+	ShowSystemAlarm Code & Err.Number & " " & Err.Description
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+If Not (rst.EOF And rst.BOF) Then 	
+	rst.MoveFirst 	
+		SmartTags(Result_Date) = rst.Fields(0).Value
+		SmartTags(Result) = rst.Fields(1).Value
+		SmartTags(Before) = True
+Else
+	SmartTags(Successfull) = False
+End If
+SmartTags(Successfull) = True
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
