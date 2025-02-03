@@ -1,0 +1,28 @@
+Sub F15_Log(ByVal Connection_Path, ByVal Message)
+Dim Connect, rst
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Parametre_ID:"&Message & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Dim Code
+Code =" insert into Log(Message) values('"&Message&"')"
+ShowSystemAlarm Code
+Set rst = Connect.Execute(Code)
+If Err.Number <> 0 Then
+	ShowSystemAlarm Code	
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
