@@ -1,0 +1,11 @@
+Sub F5_Date_Time()
+Dim pdate1
+DateTime = Now
+pdate1= "'" & Year(Now)&  "-" &Month(Now)  &  "-"&Day(Now) &" "& Hour(Now)   &":"&  Minute(Now)  &":"&Second(Now)  & "'" 
+DB3_HMI_System_Time_PC_Year =Year(Now)
+DB3_HMI_System_Time_PC_Month=Month(Now)
+DB3_HMI_System_Time_PC_Day=Day(Now)
+DB3_HMI_System_Time_PC_Hour=Hour(Now)
+DB3_HMI_System_Time_PC_Minute=Minute(Now)
+DB3_HMI_System_Time_PC_Second=Second(Now)
+End Sub
