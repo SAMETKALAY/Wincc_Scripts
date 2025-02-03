@@ -1,0 +1,36 @@
+Sub F13_sp_PartStatusUpdate(ByVal Connection_Path, ByVal Tablo, ByVal Serial_Number, ByVal OperationID, ByVal ProductNumber, ByVal In_Result, ByVal Out_Result, ByVal Error_Description)
+Dim Connect, rst,Code
+SmartTags(Error_Description) ="Not_Read"
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Error Local Previous Check:" & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+
+
+Code ="DECLARE	@return_value int,@ResultOUT int EXEC	@return_value = [dbo].["&Tablo&"]	@SerialNumber = N'"&Serial_Number&"',@OperationID = "&OperationID&",@ProductNumber = N'"&ProductNumber&"',	@Result = "&In_Result&",@RunSelect = '0',@ResultOUT = @ResultOUT OUTPUT SELECT	@ResultOUT as N'@ResultOUT'" 
+ShowSystemAlarm Code
+Set rst = Connect.Execute(Code)
+If Err.Number <> 0 Then
+	ShowSystemAlarm Code & Err.Number & " " & Err.Description
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+If Not (rst.EOF And rst.BOF) Then 	
+	rst.MoveFirst 	
+		SmartTags(Out_Result) = rst.Fields(0).Value
+		SmartTags(Error_Description) = rst.Fields(1).Value
+End If
+
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
