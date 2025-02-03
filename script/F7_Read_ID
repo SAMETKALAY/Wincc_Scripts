@@ -1,0 +1,31 @@
+Sub F7_Read_ID(ByVal Connection_Path, ByVal Tablo, ByVal Serial_Number, ByVal Result_Tag)
+Dim Connect, rst,Code
+ShowSystemAlarm "START ID"
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Error ParaameterID:" & Err.Number & " " & Err.Description
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Code ="Select ID from "&Tablo&" where SerialNumber ='"&SmartTags("Serial_Number")&"' order by PDate desc"
+Set rst = Connect.Execute(Code)
+If Err.Number <> 0 Then
+	ShowSystemAlarm Code & Err.Number & " " & Err.Description
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+If Not (rst.EOF And rst.BOF) Then 	
+	rst.MoveFirst 	
+		SmartTags(Result_Tag) = rst.Fields(0).Value
+End If
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
