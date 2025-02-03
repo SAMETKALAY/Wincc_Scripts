@@ -1,0 +1,47 @@
+Sub F3_Save_Value(ByVal Tablo, ByVal Connection_Path, ByVal RecipeID, ByVal Parametre_ID, ByVal Result_Tag, ByVal Successfull)
+Dim Connect, rst, j,i,Parameters
+Parameters=-2147483648+Parametre_ID
+On Error Resume Next
+Set Connect = CreateObject("ADODB.Connection")
+Set rst = CreateObject("ADODB.Recordset")
+Connect.open Connection_Path
+
+If Err.Number <> 0 Then
+	ShowSystemAlarm "SQL Connection Parametre_ID:"&Parametre_ID & Err.Number & " " & Err.Description
+	SmartTags(Successfull) = False
+	Err.Clear
+	Set Connect = Nothing 
+	Exit Sub
+End If
+Dim Value
+If 	SmartTags(Result_Tag) =True Then
+	Value=1	
+	ShowSystemAlarm "Value1" & Value
+End If
+If 		SmartTags(Result_Tag) =False Then
+	Value=0
+	ShowSystemAlarm "Value0" & Value
+End If
+If 	Not (	SmartTags(Result_Tag) =False Or		SmartTags(Result_Tag) =True) Then
+Value=	SmartTags(Result_Tag)
+ShowSystemAlarm "Value1_Tag" & Value
+End If
+
+
+Dim Code
+Code =" insert into "&Tablo&"(RecordID,ParameterID,Value,PlantNumber) values('"&RecipeID&"','"&Parameters&"',CAST(REPLACE('"&Value&"', ',', '.') AS DECIMAL(18,6)),'"&SmartTags("DB1_SQL_Connect_Plant_Number")&"')"
+ShowSystemAlarm Code
+Set rst = Connect.Execute(Code)
+If Err.Number <> 0 Then
+		SmartTags(Successfull) = False
+	ShowSystemAlarm Code	
+	Err.Clear
+	Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+	Exit Sub
+End If
+    Connect.close 
+	Set rst = Nothing
+    Set Connect = Nothing
+End Sub
