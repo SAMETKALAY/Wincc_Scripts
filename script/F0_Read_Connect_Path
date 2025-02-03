@@ -1,0 +1,75 @@
+Sub F0_Read_Connect_Path()
+ Dim fso, f,OP10_Server,OP10_Database,OP10_User,OP10_Pasword,OP20_Server,OP20_Database,OP20_User,OP20_Pasword,OP50_Server,OP50_Database,OP50_User,OP50_Pasword,OP60_Server,OP60_Database,OP60_User,OP60_Pasword,GENERAL_Server,GENERAL_Database,GENERAL_User,GENERAL_Pasword
+ On Error Resume Next
+Set fso = CreateObject("Scripting.FileSystemObject")
+If Err.Number <> 0 Then
+	ShowSystemAlarm "Error #" & CStr(Err.Number) & " " & Err.Description
+	Err.Clear
+	Exit Sub
+End If
+Set f = fso.OpenTextFile("C:\KALAY\Path\OP10.txt", 1, 0, -2)
+OP10_Server = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP10_Database = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP10_User = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP10_Pasword = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+         
+Set f = fso.OpenTextFile("C:\KALAY\Path\OP20.txt", 1, 0, -2)
+OP20_Server = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP20_Database = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP20_User = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP20_Pasword = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1         
+         
+Set f = fso.OpenTextFile("C:\KALAY\Path\OP50.txt", 1, 0, -2)
+OP50_Server = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP50_Database = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP50_User = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP50_Pasword = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1  
+
+
+Set f = fso.OpenTextFile("C:\KALAY\Path\OP60.txt", 1, 0, -2)
+OP60_Server = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP60_Database = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP60_User = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+OP60_Pasword = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1  
+
+Set f = fso.OpenTextFile("C:\KALAY\Path\General.txt", 1, 0, -2)
+GENERAL_Server = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+GENERAL_Database = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+GENERAL_User = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1
+GENERAL_Pasword = f.ReadLine	
+         f.AtEndOfStream =f.AtEndOfStream +1  
+
+
+
+Set f = fso.OpenTextFile("C:\KALAY\Path\Plant_Number.txt", 1, 0, -2)
+SmartTags("DB1_SQL_Connect_Plant_Number") = f.ReadLine	
+ 
+
+DB1_SQL_Connect_Op10_Path= "Provider=SQLOLEDB;Data Source="&OP10_Server&";Initial Catalog="&OP10_Database&";User ID="&OP10_User&";Password="&OP10_Pasword&";"
+DB1_SQL_Connect_Op20_Path= "Provider=SQLOLEDB;Data Source="&OP20_Server&";Initial Catalog="&OP20_Database&";User ID="&OP20_User&";Password="&OP20_Pasword&";"
+DB1_SQL_Connect_Op50_Path= "Provider=SQLOLEDB;Data Source="&OP50_Server&";Initial Catalog="&OP50_Database&";User ID="&OP50_User&";Password="&OP50_Pasword&";"
+DB1_SQL_Connect_Op60_Path= "Provider=SQLOLEDB;Data Source="&OP60_Server&";Initial Catalog="&OP60_Database&";User ID="&OP60_User&";Password="&OP60_Pasword&";"   
+DB1_SQL_Connect_General_Path= "Provider=SQLOLEDB;Data Source="&GENERAL_Server&";Initial Catalog="&GENERAL_Database&";User ID="&GENERAL_User&";Password="&GENERAL_Pasword&";"
+                
+ShowSystemAlarm "Source File Is Read Successfully"
+         
+End Sub
